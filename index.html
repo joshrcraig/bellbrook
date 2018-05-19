@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Josh Craig Responsive Site Examples</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="code.js"></script>
+    <link rel="icon" href="https://goo.gl/x8CrTc">
+</head>
+ <body>
+    
+<div class="wrapper1">
+    <header class="box headerwrapper">
+      <img class="headerpic" src="RWD2.png" alt="RWD2">
+      <div class="headertext">
+      <h1><a href="index.html">Mr. Craig's Demos</a></h1>
+      <h4>A CSS Grid-based site to learn CSS Grid</h4>
+      </div>
+    </header>
+  <nav class="box" id="flex-nav">
+       <a href="#" class="toggleNav">☰ Menu</a> <!--This will only be visible less than 480px wide-->
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="basic.html">Basic Example</a></li>
+        <li><a href="gridwsections.html">Grid & Sections</a></li>
+        <li><a href="subgrid.html">Sub Grid</a></li>
+        <li><a href="resources.html">Resources</a></li>
+       </ul>
+  </nav>
+    <main class="box mainaside"><h2>MAIN</h2><p>This home page is an example of a "CSS Grid" layout. Click <a href="basic2.html">here</a> to see a basic grid layout with a media query.</p><p><a href="https://goo.gl/G3fdkK">Here</a> are some more advanced demonstrations with sticky navigation menus and parallax.</p>
+   
+        <div class="pics">
+            <video controls preload="metadata">
+            <source src="puppy.mp4" type="video/mp4">
+            </video>
+       </div>
+    </main>
+  <aside class="box">
+    <h2>ASIDE</h2>
+    <h4>Getting Responsive</h4>
+    <p>Put this line in your css to prevent your images from getting too large for their containers: <p>img {max-width:100%;}</p>
+    <p>Put the following in the head of your responsive web page to ensure the browser renders the page correctly:</p>
+    <p>&lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;</p>
+    <img src="RWD2.png" alt="RWD2">
+  </aside>
+  <footer class="box">&copy; 2017</footer>
+  </div>
+</body>
+</html>
+
