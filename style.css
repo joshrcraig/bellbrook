@@ -1,0 +1,311 @@
+body {
+  font-family: Verdana;
+  margin: 2%;
+  background: linear-gradient(to left, blue, indigo);
+  }
+
+img {
+    max-width:100%;
+    }
+
+video {
+    max-width: 100%;
+    height:auto;
+}
+.box {
+  border-radius: 5px;
+  padding: 10px;
+    }
+    
+header {
+    background-color:white;
+    grid-area:header;
+    }
+
+.headerpic {
+    grid-area:headerpic;
+    margin:auto 0;
+    max-height:12em; /*Note that the height and width may need to be adjusted for your image*/
+    }
+
+.headertext {
+    grid-area:headertext;
+    text-align:center;
+    }
+    
+.headerwrapper { /*Subgrid in my header to keep my picture and text seperated*/
+    display:grid;
+    grid-template-columns:30% auto;
+    grid-template-areas:
+    "headerpic headertext"
+    }
+
+header h1 {
+     font-size:6vw;
+     font-family:Impact;
+     text-shadow: 2px 2px 5px red;
+     margin: 2px 0;
+    }
+
+header h4 {
+    font-size:3vw;
+    font-family:Arial;
+    color:navy;
+    margin:1em 0 0 0;
+    }
+    
+header a {
+    text-decoration:none;
+    color:blue;
+    }
+
+nav {   
+    background-color: green;
+    font-size:125%;
+    grid-area:nav;
+    }
+
+main {
+    background-color:#3A55F9;
+    color:white;
+    grid-area:main;
+    }
+
+main a {
+    color:black;
+    font-weight:bold;
+}
+
+.pics {
+    margin:2em 0 0 0;
+    display:grid;
+    justify-content:space-around;
+    } 
+
+.section1 { 
+    background-color: brown;
+    color: white;
+    grid-area:section1;
+    }
+
+.section2{
+    background-color: indigo;
+    color: white;
+    grid-area:section2;
+    }
+
+.section3{
+    background-color: orange;
+    color: white;
+    grid-area:section3;
+    }
+    
+section a {
+    color:black;
+    font-weight:bold;
+}
+
+.article1 {
+    background-color:gray;
+    color: black;
+    grid-area:article1;
+    }
+
+.article2 {
+    background-color: rgba(255,255,255,.7);
+    color: block;
+    grid-area:article2;
+    }
+
+.article3 {
+    background:linear-gradient(to top, white, black);
+    color: white;
+    grid-area:article3;
+    }
+
+.article4 {
+    background-color: rgba(0,0,0,.8);
+    color: white;
+    grid-area:article4;
+    }
+
+aside {
+    background-color: goldenrod;
+    color: white;
+    grid-area:aside;
+    }
+
+footer {
+    text-align:right;
+    background-color: red;
+    color:white;
+    grid-area:footer;
+    }
+    
+/*--------Mobile first - no media query needed until the screen is larger than 480px---------*/  
+.wrapper1 { /*index.html*/
+    display: grid;
+    grid-gap: .5em;
+    grid-template-areas:
+    "nav"
+    "header"
+    "main"
+    "aside"
+    "footer";
+  }
+  
+ .wrapper2 { /*subgrid.html*/
+    display: grid;
+    grid-gap: .5em;
+    grid-template-areas:
+    "nav"
+    "header"
+    "main"
+    "footer";
+  } 
+  
+ .wrapper3 { /*gridwsections.html and resources.html*/
+    display: grid;
+    grid-gap: .5em;
+    grid-template-areas:
+    "nav"
+    "header"
+    "main"
+    "section1"
+    "section2"
+    "section3"
+    "footer";
+  } 
+  
+#subgridwrapper { /*This is to put a grid within a grid on subgrid.html*/
+    display:grid;
+    grid-gap:.2em;
+    grid-template-areas:
+    "article1"
+    "article2" 
+    "article3"
+    "article4";
+    }
+
+/*This stuff is for the hamburger menu*/
+.toggleNav {
+    display:grid; /*This is what allows the hamburger icon and "Menu" to display*/
+    text-align:center;
+    }
+
+#flex-nav ul {
+    display: none; /*jQuery toggles the nav from to this class to the .open when clicked*/
+    text-align:center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    }
+ 
+#flex-nav ul.open { /*.open is the class that gets toggled when clicked (with help from the jQuery code)*/
+    display:grid;
+    }
+    
+#flex-nav li {
+    padding-left:10px;
+    padding-top:10px;
+    }
+
+#flex-nav a {
+    color:white;
+    text-decoration:none;
+    }
+
+#flex-nav a:hover {
+    color:black;
+    }
+
+/*---------------------Tablet media query----------------------------*/
+@media only screen and (min-width: 480px)  {
+.wrapper1 { /*index.html*/
+    grid-template-columns: 45% auto;
+    grid-template-areas:
+    "header header"
+    "nav aside"
+    "main main"
+    "footer footer";
+    }
+
+.wrapper2 { /*subgrid.html*/
+    grid-template-columns: 45% auto;
+    grid-template-areas:
+    "header header"
+    "nav main"
+    "footer footer";
+    }
+
+.wrapper3 { /*gridwsections.html and resources.html*/
+    grid-template-columns: 45% auto;
+    grid-template-areas:
+    "header header"
+    "nav section1"
+    "nav section2"
+    "nav section3"
+    "main main"
+    "footer footer";
+    }
+    
+#subgridwrapper {  /*This is to put a grid within a grid on subgrid.html*/
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+    "article1 article2"
+    "article3 article4";
+    }
+    
+/* Below will change from hamburger menu to side navigation*/
+  
+.toggleNav {
+    display: none; /*Makes the hamburger icon with the word "Menu" to disappear at this screen size*/
+  }
+  
+#flex-nav ul {
+    display:grid;
+    text-align:left;
+  }
+
+#flex-nav li {
+    padding-left:10px;
+    padding-top:10px;
+    }
+}
+
+/*---------------------Desktop media query----------------------------*/
+@media only screen and (min-width: 960px)   {
+     
+.wrapper1 { /*index.html*/
+    grid-template-columns: 25% auto 25%;
+    grid-template-areas:
+    "header header header"
+    "nav main aside"
+    "footer footer footer";
+    }
+  
+.wrapper2 { /*subgrid.html*/
+    grid-template-columns: 30% auto;
+    grid-template-areas:
+    "header header"
+    "nav main"
+    "footer footer";
+    }
+  
+.wrapper3 { /*gridwsections.html and resources.html*/
+    grid-template-columns: 20% 50% auto;
+    grid-template-areas:
+    "header header header"
+    "nav main section1"
+    "nav main section2"
+    "nav main section3"
+    "footer footer footer";
+    }
+
+#subgridwrapper {  /*This is to put a grid within a grid on subgrid.html*/
+    grid-template-columns: 33% 33% 33%;
+    grid-template-areas:
+    "article1 article1 article1"
+    "article2 article3 article4";
+    }
+}
