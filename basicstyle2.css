@@ -1,0 +1,67 @@
+* {
+    padding:20px; /*you don't need this - it's just to space everything out in my example*/
+}
+
+img{
+    max-width:100%; /*keep this in case you add pictures*/
+	}
+	
+header {
+    background-color:red;
+    grid-area:header;
+    }
+
+nav {
+    background-color:blue;
+    grid-area:nav;
+    }
+
+main {
+    background-color:yellow;
+    grid-area:main;
+    }
+
+aside {
+    background-color:green;
+    grid-area:aside;
+    }
+
+footer {
+    background-color:purple;
+    grid-area:footer;
+    }
+
+/*------------------------------Mobile first layout-------------------------------*/
+.container1 { /*for index.html*/
+  display: grid;
+  grid-template-columns:1fr; /*only 1 column needed on mobile*/
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "aside"
+    "footer";
+    }
+
+/*----------------------------------Tablet layout-----------------------------------*/
+@media only screen and (min-width: 32em)  {
+.container1 { /*for index.html*/
+    grid-template-columns: 35% auto; /*two columns: left is 35%, right is auto*/
+    grid-template-areas:
+    "header header"
+    "nav aside"
+    "main main"
+    "footer footer";
+    }
+}
+
+/*----------------------------------Desktop layout-----------------------------------*/
+@media only screen and (min-width: 64em)  {
+.container1 { /*for index.html*/
+    grid-template-columns: 25% auto 25%; /*three columns: left is 25%, middle is auto, right is 25%*/
+    grid-template-areas:
+    "header header header"
+    "nav main aside"
+    "footer footer footer";
+    }
+}
